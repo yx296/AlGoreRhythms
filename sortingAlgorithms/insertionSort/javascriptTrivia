@@ -1,0 +1,11 @@
+what is the difference between == and ===?
+Explain how this works in Javascript
+
+nd when a function executes, it gets the this property—a variable with the value of the object that invokes the function where this is used.
+
+Explain the difference between synchronous and asynchronous functions in Javascript
+Explain closures
+explore hoisting
+explain promises
+explain truthy and falsy
+//
