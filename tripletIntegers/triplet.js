@@ -1,5 +1,4 @@
-// Given an array of integers, find all triplets of integers  
-// that add up to a number greater than a given threshold. 
+
 
 // function triplets(arr, sum) { debugger
 //   var results = [];
