@@ -1,4 +1,4 @@
-
+//brute force solution to get triplets equal to sum
 
 // function triplets(arr, sum) { debugger
 //   var results = [];
@@ -14,8 +14,9 @@
 //   return results;
 // }
 
+//get triplets greater than sum
 
-function triplets(arr, sum) { debugger
+function tripletsGreaterThanSum(arr, sum) { debugger
   var results = []
   
   arr.sort(function(a, b) {
@@ -25,20 +26,44 @@ function triplets(arr, sum) { debugger
   for (var i = 0; i < arr.length - 2; i++) {
     var left = i + 1;
     var right = arr.length - 1;
-
+    
     while (left < right) {
-      if (arr[i] + arr[left] + arr[right] === sum) {
+      if (arr[i] + arr[left] + arr[right] > sum) {
         results.push([arr[i], arr[left], arr[right]]);
-        break;
-      } else if (arr[i] + arr[left] + arr[right] < sum) {
-        left++;
-      } else if (arr[i] + arr[left] + arr[right] > sum) {
-        right--;
       }
+      left++;
     }
   }
   return results;
 }
 
 
-console.log(triplets([1, 3, 4, 6, 9, 12], 24));
+function tripletsEqualToSum(arr, sum) {
+  var results = []
+  
+  arr.sort(function(a, b) {
+    return a - b;
+  })
+
+  for (var i = 0; i < arr.length - 2; i++) {
+    var left = i + 1;
+    var right = arr.length - 1;
+    
+    while (left < right) {
+      if (arr[i] + arr[left] + arr[right] === sum) {
+        results.push([arr[i], arr[left], arr[right]]);
+        break; //no need to fiddle around with left and right pointers anymore, just increment i
+      } else if (arr[i] + arr[left] + arr[right] < sum) {
+        left++;
+      } else {
+        right--;
+      }
+    }
+  }
+  return results;
+}
+ 
+// console.log(tripletsGreaterThanSum([3, 7, 8, 9, 12], 24));
+// console.log(tripletsGreaterThanSum([1, 3, 4, 6, 9, 12], 24));
+console.log(tripletsEqualToSum([3, 7, 8, 9, 12], 24));
+console.log(tripletsEqualToSum([1, 3, 4, 6, 9, 12], 24));
