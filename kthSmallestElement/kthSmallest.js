@@ -33,7 +33,7 @@ function kthSmallest(arr, k, left, right) { debugger
   if (k > 0 && k <= arr.length) {
     var pivotIndex = partition(arr, left, right);
   
-    // the 2nd smallest element will have an index of 1, and we know the pivot is sorted for sho
+    // the 2nd smallest element will have an index of 1, and we know the pivot is sorted for sure
     // the kth smallest element will have an index of k - 1
     if (pivotIndex === k - 1) { 
       return arr[pivotIndex];
