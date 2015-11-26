@@ -1,30 +1,43 @@
-var array = [0, 1, 2, 3, 4, 6];
-var sum = 7;
+var array = [0, 1, 3, 4, 7, 10];
+var sum = 5;
+
+//hash Approach (O(n) time complexity), (O(n), space complexity)
 
 function twoSums(array) {
-  var results = [];
-
-  var hash = {};
-  
+  var hash = {}
   for (var i = 0; i < array.length; i++) {
-    hash[array[i]] = array[i];
+    var number = array[i];
+    hash[number] = number;
   }
 
-  for (var j = 0; j < array.length; j++) {
-    var num = array[j];
-    if (hash[sum - num]) {
-      results.push([num, sum - num]);
+  for (var number in hash) {
+    if (hash[sum-number]) {
+      return true;
     }
   }
-
-
-  return results;
+  return false;
 }
 
 
+function twoSums(array) {
+  var hash = {}
+  for (var i = 0; i < array.length; i++) {
+    var number = array[i];
+    hash[number] = number;
+  }
 
-
+  for (var number in hash) {
+    if (hash[sum-number]) {
+      return true;
+    }
+  }
+  return false;
+}
 
 console.log(twoSums(array));
+
+
+
+
 
 
