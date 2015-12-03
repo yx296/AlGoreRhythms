@@ -1,31 +1,18 @@
-// var myObj = {
-//   specialFunction: function() {
-//     console.log('bejeegles');
-//   },
-//   getAsyncData: function(cb) {
-//     cb();
-//   },
-//   render: function() {
-//     this.getAsyncData(function() {
-
-//       this.specialFunction();
-//     }.bind(this));
-//   }
-// }
-
-// myObj.render();
-
-
-var foo = {
-    x: 3
+function list() {
+  return Array.prototype.slice.call(arguments);
 }
 
-var bar = function(){
-    console.log(this.x);
-}
+var list1 = list(1, 2, 3); // [1, 2, 3]
 
-bar(); // undefined
+// 
 
-var boundFunc = bar.bind(foo);
 
-boundFunc(); // 3
+
+// Create a function with a preset leading argument
+var leadingThirtysevenList = list.bind(undefined, 37);
+
+var list2 = leadingThirtysevenList(); // [37]
+var list3 = leadingThirtysevenList(1, 2, 3); // [37, 1, 2, 3]
+
+console.log(list2);
+console.log(list3);
