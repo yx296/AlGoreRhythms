@@ -4,6 +4,7 @@
 
 var input = [ 2, 5, 3, null, 1, null, null, 7, 8, null, 1 ];
 var input1 = [null, null, null, null, 1];
+var array = [null, 5, null, 1, null, 5, null, 3, 2];
 
 
 // var input = [ 2, 5, 3, 1, 7, null, null, null, 8, null, 1 ];
@@ -30,7 +31,7 @@ function reorganizeArr(arr) {
 }
 
 
-console.log(reorganizeArr(input1));
+console.log(reorganizeArr(array));
 
 
 
