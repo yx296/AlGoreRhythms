@@ -7,7 +7,7 @@ var input1 = [null, null, null, null, 1];
 var array = [null, 5, null, 1, null, 5, null, 3, 2];
 
 
-// var input = [ 2, 5, 3, 1, 7, null, null, null, 8, null, 1 ];
+var input = [ 2, 5, 3, 1, 7, null, null, null, 8, null, 1 ];
 // output: [ 2, 5, 3, 1, 7, 8, 1, null, null, null, null ]
 
 function swap(arr, idx1, idx2) {
@@ -16,18 +16,18 @@ function swap(arr, idx1, idx2) {
   arr[idx2] = temp;
 }
 
-function reorganizeArr(arr) {
-  for (var i = 0; i < arr.length; i++) {
-    if (arr[i] === null) {
-      for (var j = i; j < arr.length; j++) {
-        if (typeof arr[j] === 'number') {
-          swap(arr, i, j);
+function reorganizeArr(nums) { 
+  for (var i = 0; i < nums.length; i++) {
+    if (!nums[i]) {
+      for (var j = i + 1; j < nums.length; j++) {
+        if (nums[j]) {
+          swap(nums, i, j);
           break;
         }
       }
     }
   }
-  return arr;
+  return nums;
 }
 
 

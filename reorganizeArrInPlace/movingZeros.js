@@ -7,20 +7,23 @@ function swap(items, firstIndex, secondIndex){
   items[secondIndex] = temp;
 }
 
-
-
-function movingZeros(array) {
-  for (var i = 0; i < array.length; i++) {
-    if (array[i]) {
+function movingZeros(nums) {  
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i]) {
       var indexOfElement = i;
-      while (array[indexOfElement - 1] === null) { //while element to the left is null
-        swap(array, indexOfElement, indexOfElement-1);
-        indexOfElement = indexOfElement-1
+      while (nums[indexOfElement - 1] === 0) { //while element to the left is null
+        swap(nums, indexOfElement, indexOfElement-1); //swap element and null
+        indexOfElement = indexOfElement-1 // keep track of number going to the left
       }
     } 
   }
-  return array;
+  return nums;
 };
 
 
-console.log(movingZeros(array));
+
+var test = [0,1,0,3,12];
+
+console.log(movingZeros(test));
+
+
