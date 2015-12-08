@@ -1,18 +1,11 @@
-function list() {
-  return Array.prototype.slice.call(arguments);
-}
+//difference between call and bind
 
-var list1 = list(1, 2, 3); // [1, 2, 3]
+var sum = function(a, b) {
+    return a + b;
+};
 
-// 
+var addToCall = sum.call(this, 123, 2);
+var addToBind = sum.bind(this, 2);
 
-
-
-// Create a function with a preset leading argument
-var leadingThirtysevenList = list.bind(undefined, 37);
-
-var list2 = leadingThirtysevenList(); // [37]
-var list3 = leadingThirtysevenList(1, 2, 3); // [37, 1, 2, 3]
-
-console.log(list2);
-console.log(list3);
+console.log(addToCall);
+console.log(addToBind(23));

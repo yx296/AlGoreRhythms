@@ -33,7 +33,7 @@ function pushZerosToEnd(nums) { debugger
 
   //first move down non zero numbers to the left
   for (var i = 0; i < nums.length; i++) {
-    if (nums[i] !== 0) {
+    if (nums[i]) {
       nums[count] = nums[i];
       count++;
       // here count is incremented
