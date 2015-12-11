@@ -1,31 +1,17 @@
-// var foo = 10 + '20';
+// bind and call
 
-// console.log(foo);
-// // function add(a, b) {
-// //   return a + b;
-// // }
+var AnswerPrototype = {
+  get: function fn1() {
+    return this.val;
+  }
+};
 
+var lifeAnswer = Object.create(AnswerPrototype);
+lifeAnswer.val = 42;
+console.log(lifeAnswer.get());
 
-// function add(a) {
-//   return function(b) {
-//     return a + b;
-//   }
-// }
-
-
-
-
-// // console.log(add(2, 5)); // 7
-
-// console.log(add(2)(5));
-// // add(2)(5); // 7
+var dessertAnswer = Object.create(AnswerPrototype);
+dessertAnswer.val = 3.14;
+console.log(dessertAnswer.get());
 
 
-
-// var a = 2
-
-// function(b) {
-
-// }
-console.log(0.1 + 0.2);
-console.log(0.1 + 0.2 == 0.3);
