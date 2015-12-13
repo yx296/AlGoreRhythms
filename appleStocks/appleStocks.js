@@ -38,13 +38,15 @@ function getMaxProfit(stocks) { debugger
   var lowestPriceSoFar = stocks[0]; 
   var maxProfit = stocks[1] - stocks[0];       
   for (var i = 1; i < stocks.length; i++) {
-    if (stocks[i] - lowestPriceSoFar > maxProfit) {
-      maxProfit = stocks[i] - lowestPriceSoFar;
-    } 
 
-    if (stocks[i] < lowestPriceSoFar) {
-      lowestPriceSoFar = stocks[i];
-    }
+    // if (stocks[i] - lowestPriceSoFar > maxProfit) {
+    //   maxProfit = stocks[i] - lowestPriceSoFar;
+    // } 
+    maxProfit = Math.max(stocks[i] - lowestPriceSoFar, maxProfit);
+    // if (stocks[i] < lowestPriceSoFar) {
+    //   lowestPriceSoFar = stocks[i];
+    // }
+    lowestPriceSoFar = Math.min(lowestPriceSoFar, stocks[i]);
 
   }
   return maxProfit;
