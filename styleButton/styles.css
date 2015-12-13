@@ -1,0 +1,37 @@
+
+
+
+
+
+
+/*body {
+  text-align: center;
+}*/
+
+a {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-transform: uppercase;
+  background-clip: content-box; /* support: IE9+ */
+  background-color: #ccc;
+}
+}
+
+/*div {
+  height: 400px;
+  width: 400px;
+  background: #eee;
+  margin: auto;
+}
+
+p {
+  width: 60%;
+  margin: auto;
+  font: 14px/1.5 Helvetica, sans-serif;
+}
+*/
