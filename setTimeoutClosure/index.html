@@ -9,8 +9,8 @@
   <button id="btn-1">Button 2!</button>
   <button id="btn-2">Button 3!</button>
 
-
-<!--   <script type="text/javascript">
+<!-- IIFE #1 -->
+  <script type="text/javascript">
       var prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
       for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
         (function(frozenBtnNum) {
@@ -19,7 +19,34 @@
           };
         })(btnNum)
       }
-  </script> -->
+  </script>
+
+  <script>
+    //each timewithin for loop
+    var frozenBtnNum = 0;
+
+    document.getElementById('btn-' + btnNum).onclick = function() {
+      alert(prizes[frozenBtnNum]);
+    };
+
+
+    var frozenBtnNum = 1;
+    
+    document.getElementById('btn-' + btnNum).onclick = function() {
+      alert(prizes[frozenBtnNum]);
+    };
+
+    var frozenBtnNum = 2;
+    
+    document.getElementById('btn-' + btnNum).onclick = function() {
+      alert(prizes[frozenBtnNum]);
+    };
+  </script>
+
+
+
+
+
 
 
   
@@ -33,20 +60,49 @@
       }(btnNum)
     }
   </script>
+  
+  <!-- what above IIFE sort of looks like -->
+  <script>
+    document.getElementById('btn-' + btnNum).onclick = 
+      (var frozenBtnNum = 0;
+        function() {
+          alert(prizes[frozenBtnNum])
+        }
+      )
+
+    document.getElementById('btn-' + btnNum).onclick = 
+      (var frozenBtnNum = 1;
+        function() {
+          alert(prizes[frozenBtnNum])
+        }
+      )
+
+    document.getElementById('btn-' + btnNum).onclick = 
+      (var frozenBtnNum = 2;
+        function() {
+          alert(prizes[frozenBtnNum])
+        }
+      )
+  </script>
+
 
 <!-- when a function accesses a variable outside its immediate scope, it accesses that variable, 
 not a frozen copy -->
 
 
-  <script type="text/javascript">
+
+
+<!--   <script type="text/javascript">
     var prizes = ['A Unicorn!', 'A Hug!', 'Fresh Laundry!'];
     for (var btnNum = 0; btnNum < prizes.length; btnNum++) {
       document.getElementById('btn-' + btnNum).onclick = function() {
         alert(prizes[btnNum]);
       }
     }
+    // but this part makes a lot of sense "event is binded at the very time loop is executing but callabck function will be executed later when user clicks..
   </script>
-
+ -->
+  
 
 </body>
 </html>
