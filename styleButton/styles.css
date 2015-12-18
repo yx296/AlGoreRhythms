@@ -17,9 +17,9 @@ a {
   border-radius: 10px;
   border: 1px solid black;
   text-transform: uppercase;
-  background-clip: content-box; /* support: IE9+ */
-  background-color: #ccc;
-}
+  /*background-clip: content-box; /* support: IE9+ */
+  /*background-color: #ccc;*/
+*/}
 }
 
 /*div {
