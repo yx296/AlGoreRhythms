@@ -1,23 +1,48 @@
-var allAnagrams = function(stringRem, accum) { 
-  var results =  [];
+var permute = function(arr, accum) { debugger
+  var results = [];
+  var accum = accum || [];
 
-  if (stringRem.length === 0) {
+  if (arr.length === 0) {
     return accum;
   }
 
-  for (var i = 0; i < stringRem.length; i++) {
-    var letter = stringRem[i];
-    var stringRemainingLetters = stringRem.slice(0, i) + stringRem.slice(i + 1);
-
-    results = results.concat(allAnagrams(stringRemainingLetters, accum+letter));
+  for (var i = 0; i < arr.length; i++) {
+    var num = arr[i];
+    var remainingNums = arr.slice(0, i).concat(arr.slice(i + 1));
+    results = results.concat(permute(remainingNums, accum.concat(num)))
   }
 
   return results;
-};
+}
+
+
+console.log(permute([1,2,3]));
 
 
 
-console.log(allAnagrams('abc', ''));
+
+
+
+// var allAnagrams = function(stringRem, accum) { 
+//   var results =  [];
+
+//   if (stringRem.length === 0) {
+//     return accum;
+//   }
+
+//   for (var i = 0; i < stringRem.length; i++) {
+//     var letter = stringRem[i];
+//     var stringRemainingLetters = stringRem.slice(0, i) + stringRem.slice(i + 1);
+
+//     results = results.concat(allAnagrams(stringRemainingLetters, accum+letter));
+//   }
+
+//   return results;
+// };
+
+
+
+// console.log(allAnagrams('abc', ''));
 
 
 

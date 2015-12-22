@@ -13,31 +13,31 @@ function permStr(word, accum) {
   return results;
 }
 
-// console.log(permStr('abc', ""));
+// console.log(permStr('1234', ""));
 
 
 
 
-function permDigitsArr(inputArr) {
-  var results = [];
+// function permDigitsArr(inputArr) {
+//   var results = [];
 
-  function permute(arr, accum) {
+//   function permute(arr, accum) {
     
-    if (accum.length === inputArr.length) {
-      results.push(accum);
-      return;
-    }
+//     if (accum.length === inputArr.length) {
+//       results.push(accum);
+//       return;
+//     }
     
-    for (var i = 0; i < arr.length; i++) {
-      var currentDigit = arr[i];
-      var remainDigits = arr.slice(0, i).concat(arr.slice(i + 1));
-      permute(remainDigits, accum.concat(currentDigit));
-    }
-  }
+//     for (var i = 0; i < arr.length; i++) {
+//       var currentDigit = arr[i];
+//       var remainDigits = arr.slice(0, i).concat(arr.slice(i + 1));
+//       permute(remainDigits, accum.concat(currentDigit));
+//     }
+//   }
 
-  permute(inputArr, []);
-  return results;
-}
+//   permute(inputArr, []);
+//   return results;
+// }
 
 
-console.log(permDigitsArr([1,2,3]));
+// console.log(permDigitsArr([1,2,3]));
