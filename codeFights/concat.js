@@ -19,7 +19,7 @@ function RunLength(str) {
 
   for (var i = 0; i < str.length; i++) {
     if (str[i] === str[i + 1]) {
-        count++;
+      count++;
     } else {
       result.push(parseInt(count + str[i]));
       count = 1;
