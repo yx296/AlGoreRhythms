@@ -8,6 +8,15 @@
 
 <body>
 
+  <div class="hero-unit" id="statsModule">
+    
+  </div>
+    <script id="stats-template" type="text/template">
+      <h2>Stats</h2>
+      <strong>people: {{people}}</strong>
+    </script>
+
+
   <div id="peopleModule">
     <h1>People</h1>
     <input placeholder="name" type="text">
@@ -22,12 +31,16 @@
         {{/people}}
       </script>
     </ul>
-    
+
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
   
-  <script src="app.js"></script>
+  <script src="scripts/pubsub.js"></script>
+  <script src="scripts/stats.js"></script>
+  <script src="scripts/people.js"></script>
+
+
 </body>
 </html>
