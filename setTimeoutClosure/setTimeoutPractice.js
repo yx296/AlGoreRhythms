@@ -1,25 +1,9 @@
-exports = (typeof window === 'undefined') ? global : window;
-
-exports.countAnswers = {
-  count : function (start, end) {
-    var timeout;
-    function doIt () {
-      console.log(start++);
-
-      if (start <= end) {
-        timeout = setTimeout(doIt, 100);
-      }
-    }
-
-    doIt();
-
-    return {
-      cancel : function () {
-        timeout && clearTimeout(timeout);
-      }
-    };
-  }
-};
+// testFunc(); 
+// var testFunc = function(){ alert("hey!"); };      
 
 
-console.log(exports.countAnswers.count.cancel());
+testFunc(); 
+(function testFunc(){ console.log("hey!"); })();
+
+// testFunc();
+// function testFunc(){ console.log("hey!"); }; 
