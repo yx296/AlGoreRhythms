@@ -17,18 +17,34 @@
 // }
 
 
+for (var i = 0; i < 5; i++) {
+  setTimeout(function() { console.log(i);}, i * 1000);
+}
+
+
+
+//But the meat of the question is about closures[1] . In the original version, every time the function passed
+ // to setTimeout is invoked, it is referring to i in the original closure, in which the for loop has 
+ // finished running and i is 10.
+// By using an IIFE (or breaking the timeout into a separate named function), 
+// you create a new closure on each run of the loop, passing the value of the variable 
+// at the time the closure was created, which is then what it will be when the anonymous 
+// function passed to setTimeout gets invoked.
+
+
+
 // 5 setTimeouts all get put on eventloop, 1 second later, they are all logged
 
 //when a function accesses a variable outside its immediate scope, it accesses that variable, 
 //not a frozen copy
 
-for (var i = 0; i < 5; i++) {
-  setTimeout(function(frozenI) { 
-    return function() {
-      console.log(frozenI);
-    }
-  }(i), i * 100)
-}
+// for (var i = 0; i < 5; i++) {
+//   setTimeout(function(frozenI) { 
+//     return function() {
+//       console.log(frozenI);
+//     }
+//   }(i), i * 100)
+// }
 
 
 // So when we pass i to the outer anonymous function as its one argument, we create a new number inside the 
