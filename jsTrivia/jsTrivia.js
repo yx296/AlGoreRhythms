@@ -33,14 +33,6 @@ var dessertAnswer
 
 
 
-
-
-
-
-
-
-
-
 // var AnswerPrototype = {
 //   constructor: function fn0 (value) {
 //     this._val = value;

@@ -36,6 +36,23 @@ var events = {
   }
 }
 
+var events = {
+  topics: {},
+
+  subscribe: function(topic, listner) {
+    this.topics[topic] = this.topics[topic] || [];
+    this.topics[topic].push(listener);
+  },
+
+  publish: function(topic, data) {
+    if (this.topics[topic]) {
+      this.topic[topic].forEach(function(listener) {
+        listener(data);
+      })
+    }
+  }
+}
+
 
 
 

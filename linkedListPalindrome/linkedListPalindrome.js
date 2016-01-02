@@ -13,16 +13,6 @@ var g = f.next = new Node('r');
 
 
 
-function checkOdd(linkedList) {
-  var count = 0;
-  var curr = linkedList;
-  while (curr) {
-    count++;
-    curr = curr.next;
-  }
-  return count % 2 === 1;
-}
-
 function findMidPoint(linkedList) {
   var slow = linkedList;
   var fast = linkedList;
@@ -32,7 +22,7 @@ function findMidPoint(linkedList) {
     slow = slow.next
   }
 
-  if (checkOdd(linkedList)) {
+  if (fast) {
     return slow.next
   } else {
     return slow;
@@ -45,16 +35,15 @@ function checkPalindrome(linkedList) {
   var firstHead = linkedList;
   var secondHead = reverseLL(midpoint);
 
-  var flag = true;
   
   while (secondHead) {
     if (secondHead.val !== firstHead.val) {
-      flag = false;
+      return false;
     }
     secondHead = secondHead.next;
     firstHead = firstHead.next;
   }
-  return flag;
+  return true;
 }
 
 
